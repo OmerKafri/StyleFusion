@@ -1,0 +1,5 @@
+.idea
+weights/ffhq/*
+weights/car/*
+weights/church/*
+/.ipynb_checkpoints/

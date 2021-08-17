@@ -1,0 +1,5 @@
+{
+	"all": "weights/car/all.pt",
+	"car": "weights/car/car.pt",
+	"background": "weights/car/background.pt"
+}

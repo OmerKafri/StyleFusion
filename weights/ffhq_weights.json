@@ -1,0 +1,7 @@
+{
+	"all": "weights/ffhq/all.pt",
+	"bg_hair_clothes": "weights/ffhq/bg_hair_clothes.pt",
+	"bg_clothes": "weights/ffhq/bg_clothes.pt",
+	"face": "weights/ffhq/face.pt",
+	"skin_mouth": "weights/ffhq/skin_mouth.pt"
+}
