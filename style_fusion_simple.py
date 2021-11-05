@@ -119,10 +119,12 @@ class StyleFusionSimple:
         assert latent_type in ["z", "w", "w+", "s"]
 
         if latent_type == "z":
+            assert l.size() == (1, 512)
             return self.z_to_s(l)
         elif latent_type == "w" or latent_type == "w+":
-            if l.size()[0] != self.stylegan_layers:
-                return self.w_plus_to_s(l.unsqueeze(0).repeat(self.stylegan_layers, 1), truncation=1)
+            assert l.size() == (1, 512) or l.size() == (1, self.stylegan_layers, 512)
+            if l.dim() == 2:
+                return self.w_plus_to_s(l.unsqueeze(0).repeat(1, self.stylegan_layers, 1), truncation=1)
             else:
                 return self.w_plus_to_s(l, truncation=1)
         else:
