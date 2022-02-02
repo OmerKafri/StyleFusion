@@ -294,7 +294,7 @@ class SFGenerator(Generator):
             s = [self.conv1.get_style_vector(latent[:, 0])] + \
                     [self.convs[i].get_style_vector(latent[:, i + 1]) for i in range(len(self.convs))]
             s_rgb = [self.to_rgb1.get_style_vector(latent[:, 1])] + \
-                    [self.to_rgbs[i].get_style_vector(latent[:, i * 2 + 2]) for i in range(len(self.to_rgbs))]
+                    [self.to_rgbs[i].get_style_vector(latent[:, i * 2 + 3]) for i in range(len(self.to_rgbs))]
             return [s, s_rgb]
 
         if style_vector is None:
